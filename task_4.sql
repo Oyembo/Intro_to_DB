@@ -10,17 +10,10 @@ USE alx_book_store;
 SELECT
     COLUMN_NAME AS `Field`,
     COLUMN_TYPE AS `Type`,
-    CASE
-        WHEN IS_NULLABLE = 'YES' THEN 'YES'
-        ELSE 'NO'
-    END AS `Null`,
-    COLUMN_KEY AS `Key`,
-    COLUMN_DEFAULT AS `Default`,
-    EXTRA AS `Extra`
 FROM
-    information_schema.COLUMNS
+    INFORMATION_SCHEMA.COLUMNS
 WHERE
-    TABLE_SCHEMA = DATABASE()
+    TABLE_SCHEMA = alx_book_store
     TABLE_NAME = 'Books'
 ORDER BY
     ORDINAL_POSITION;
