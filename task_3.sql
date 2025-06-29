@@ -6,6 +6,6 @@ mydb = mysql.connector.connect(
     database = "alx_book_store"
 )
 SHOW DATABASE,
-USE alx_book_store,
+USE alx_book_store;
 SHOW TABLES,
 print("Tables present")
