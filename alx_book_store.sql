@@ -31,13 +31,13 @@ CREATE TABLE IF NOT EXISTS Customers(
 ),
 CREATE TABLE IF NOT EXISTS Orders(
     order_id PRIMARY KEY,
-    customer_id FOREIGN KEY
+    customer_id FOREIGN KEY (customer_id) REFERENCES Customers
     order_date DATE
 ),
 CREATE TABLE IF NOT EXISTS Order_Details(
     orderdetailid PRIMARY KEY
-    order_id FOREIGN KEY
-    book_id FOREIGN KEY
+    order_id FOREIGN KEY (order_id) REFERENCES Orders
+    book_id FOREIGN KEY (book_id) REFERENCES Books
     quantity DOUBLE
 )
 """)
